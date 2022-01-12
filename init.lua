@@ -11,16 +11,13 @@ require('plugins/paq')
 
 --[[
 TODO plugins: 
-    autocompletion
     snippets
     notes
     something for formatting
     lsp
-    telescope config
-    git signs
-    comments
     tags (or just use lsp)
     tex
+    better telescope config
 
 TODO move autogroups to lua
 TODO layout of configs
