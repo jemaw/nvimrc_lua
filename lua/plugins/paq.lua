@@ -17,13 +17,13 @@ require "paq" {
 
     'nvim-lua/plenary.nvim';
     'nvim-telescope/telescope.nvim';
+    "b3nj5m1n/kommentary"
     'lewis6991/gitsigns.nvim';
 
+    -- themes
     'Pocco81/Catppuccino.nvim';
     'NLKNguyen/papercolor-theme';
 
-    -- easier keybinds
-    "tjdevries/astronauta.nvim";
 
     -- git
     "tpope/vim-fugitive";
@@ -37,14 +37,7 @@ require "paq" {
     "hrsh7th/nvim-cmp";
     "L3MON4D3/LuaSnip";
     "saadparwaiz1/cmp_luasnip";
-
-    "b3nj5m1n/kommentary"
 }
-
--- Force loading of astronauta first.
--- https://github.com/neovim/neovim/pull/13823
--- hack to use lua keymaps in options
-vim.cmd [[runtime plugin/astronauta.vim]]
 
 require('gitsigns').setup()
 require('plugins/telescope_conf')
