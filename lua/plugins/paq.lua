@@ -17,7 +17,7 @@ require "paq" {
 
     'nvim-lua/plenary.nvim';
     'nvim-telescope/telescope.nvim';
-    "b3nj5m1n/kommentary"
+    "b3nj5m1n/kommentary";
     'lewis6991/gitsigns.nvim';
 
     -- themes
@@ -36,7 +36,7 @@ require "paq" {
     "hrsh7th/cmp-cmdline";
     "hrsh7th/nvim-cmp";
     "L3MON4D3/LuaSnip";
-    "saadparwaiz1/cmp_luasnip";
+    "saadparwaiz1/cmp_luasnip"
 }
 
 require('gitsigns').setup()
