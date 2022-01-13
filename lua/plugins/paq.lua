@@ -19,6 +19,7 @@ require "paq" {
     'nvim-telescope/telescope.nvim';
     "b3nj5m1n/kommentary";
     'lewis6991/gitsigns.nvim';
+    "mhartington/formatter.nvim";
 
     -- themes
     'Pocco81/Catppuccino.nvim';
@@ -43,3 +44,4 @@ require('gitsigns').setup()
 require('plugins/telescope_conf')
 require('plugins/treesitter_conf')
 require('plugins/cmp_conf')
+require("plugins/formatter_conf")
