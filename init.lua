@@ -11,7 +11,6 @@ require('plugins/paq')
 
 --[[
 TODO plugins: 
-    snippets
     notes
     something for formatting
     lsp

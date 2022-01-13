@@ -24,7 +24,7 @@ require "paq" {
     -- themes
     'Pocco81/Catppuccino.nvim';
     'NLKNguyen/papercolor-theme';
-
+    "ellisonleao/gruvbox.nvim";
 
     -- git
     "tpope/vim-fugitive";

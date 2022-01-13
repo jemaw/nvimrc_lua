@@ -24,4 +24,4 @@ require('formatter').setup({
   }
 })
 
-vim.keymap.set('n', 'ff', ':Format<CR>:w<CR>')
+vim.keymap.set('n', '<leader>ff', ':Format<CR>:w<CR>')
