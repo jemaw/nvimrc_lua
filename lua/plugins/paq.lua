@@ -45,8 +45,11 @@ require "paq" {
 
 }
 
+-- install with pip or npm
+require('lspconfig').pyright.setup{}
 require('gitsigns').setup()
 require('plugins/telescope_conf')
+-- use TSInstall and TSUpdate
 require('plugins/treesitter_conf')
 require('plugins/cmp_conf')
 require("plugins/formatter_conf")

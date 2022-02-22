@@ -58,7 +58,6 @@ opt.colorcolumn = "120"
 opt.number = true
 opt.relativenumber = false
 opt.showmode = false
-opt.guicursor=""
 
 ----------------
 -- wildmenu

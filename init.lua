@@ -12,8 +12,6 @@ require('plugins/paq')
 --[[
 TODO plugins: 
     notes
-    something for formatting
-    lsp
     tags (or just use lsp)
     tex
     better telescope config
