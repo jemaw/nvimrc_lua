@@ -46,7 +46,7 @@ require "paq" {
 }
 
 -- install with pip or npm
-require('lspconfig').pyright.setup{}
+require('plugins/lsp_conf')
 require('gitsigns').setup()
 require('plugins/telescope_conf')
 -- use TSInstall and TSUpdate
@@ -54,15 +54,3 @@ require('plugins/treesitter_conf')
 require('plugins/cmp_conf')
 require("plugins/formatter_conf")
 
--- toggle_diagnostics
-vim.g.diagnostics_visible = true
-function _G.toggle_diagnostics()
-    if vim.g.diagnostics_visible then
-        vim.g.diagnostics_visible = false
-        vim.diagnostic.disable()
-    else
-        vim.g.diagnostics_visible = true
-        vim.diagnostic.enable()
-    end
-end
-vim.keymap.set('n', '<Leader>l', ':call v:lua.toggle_diagnostics()<CR>', {silent=true, noremap=true})
