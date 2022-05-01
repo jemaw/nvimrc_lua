@@ -16,4 +16,12 @@ require("telescope").setup({
             },
         },
     },
+    pickers = {
+        git_files = {
+            show_untracked = false
+        },
+        find_files = {
+            hidden = true
+        }
+    }
 })

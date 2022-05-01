@@ -16,7 +16,7 @@ require "paq" {
     'nvim-treesitter/nvim-treesitter';
 
     'nvim-lua/plenary.nvim';
-    'nvim-telescope/telescope.nvim';
+    {'nvim-telescope/telescope.nvim', branch="nvim-0.5.1"};
     "b3nj5m1n/kommentary";
     'lewis6991/gitsigns.nvim';
     "mhartington/formatter.nvim";
