@@ -1,6 +1,6 @@
 -- check if Paq already installed
 require "io"
-local path = vim.fn.stdpath('data') .. '/site/pack/paqs/start/paq-nvi'
+local path = vim.fn.stdpath('data') .. '/site/pack/paqs/start/paq-nvim'
 local f=io.open(path,"r")
 if f~=nil then 
     io.close(f) 
