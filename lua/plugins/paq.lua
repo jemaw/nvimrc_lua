@@ -1,15 +1,16 @@
---[[
-
-Paq Config
-
-install: git clone --depth=1 https://github.com/savq/paq-nvim.git \
-"${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/pack/paqs/start/paq-nvim
-
-:PaqInstall
-]]
-
-vim.cmd 'packadd paq-nvim'            -- load paq
-local paq = require('paq-nvim').paq   -- import module with `paq` function
+-- check if Paq already installed
+require "io"
+local path = vim.fn.stdpath('data') .. '/site/pack/paqs/start/paq-nvi'
+local f=io.open(path,"r")
+if f~=nil then 
+    io.close(f) 
+else 
+    print("Package Manager not yet installed: for installation: \
+    git clone --depth=1 https://github.com/savq/paq-nvim.git \
+    \"${XDG_DATA_HOME:-$HOME/.local/share}\"/nvim/site/pack/paqs/start/paq-nvim")
+    print("Afterwards execute :PaqInstall")
+    return 
+end
 
 require "paq" {
     'savq/paq-nvim';
@@ -41,7 +42,9 @@ require "paq" {
     -- snippets
     "L3MON4D3/LuaSnip";
     "saadparwaiz1/cmp_luasnip";
-    "rafamadriz/friendly-snippets"
+    "rafamadriz/friendly-snippets";
+    -- notes
+    "vimwiki/vimwiki"
 
 }
 
@@ -53,4 +56,4 @@ require('plugins/telescope_conf')
 require('plugins/treesitter_conf')
 require('plugins/cmp_conf')
 require("plugins/formatter_conf")
-
+require("plugins/vimwiki_conf")
