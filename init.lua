@@ -2,17 +2,18 @@
 -- Init Lua --
 --------------
 
+
 require('settings')
 require('mappings')
-require('colors')
 
 -- plugins and config of plugins
 require('plugins/paq')
+require('colors')
 
 --[[
 TODO plugins: 
-    notes
     tags (or just use lsp)
+    faster large files editing
     tex
     better telescope config
 

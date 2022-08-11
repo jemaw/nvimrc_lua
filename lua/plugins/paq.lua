@@ -6,9 +6,9 @@ if f~=nil then
     io.close(f) 
 else 
     print("Package Manager not yet installed: for installation: \
-    git clone --depth=1 https://github.com/savq/paq-nvim.git \
+    git clone --depth=1 https://github.com/savq/paq-nvim.git \\\
     \"${XDG_DATA_HOME:-$HOME/.local/share}\"/nvim/site/pack/paqs/start/paq-nvim")
-    print("Afterwards execute :PaqInstall")
+    print("Afterwards reopen nvim and execute :PaqInstall")
     return 
 end
 
@@ -26,6 +26,10 @@ require "paq" {
     'Pocco81/Catppuccino.nvim';
     'NLKNguyen/papercolor-theme';
     "ellisonleao/gruvbox.nvim";
+    "mcchrish/zenbones.nvim",
+    "rktjmp/lush.nvim";  -- required by zenbones
+     "jemaw/vim-noctwo";
+
 
     -- git
     "tpope/vim-fugitive";
