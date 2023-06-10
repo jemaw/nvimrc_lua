@@ -37,13 +37,17 @@ function _G.toggle_diagnostics()
 end
 vim.keymap.set('n', '<Leader>l', ':call v:lua.toggle_diagnostics()<CR>', opts)
 
-local servers = { 'pyright'}
-for _, lsp in pairs(servers) do
-  require('lspconfig')[lsp].setup {
-    on_attach = on_attach,
-    flags = {
-      -- This will be the default in neovim 0.7+
-      debounce_text_changes = 150,
-    }
-  }
-end
+local lspconfig = require('lspconfig')
+local rt = require("rust-tools")
+lspconfig.pyright.setup {}
+rt.setup({
+    server = {
+        on_attach = function(_, bufnr)
+            -- Hover actions
+            vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
+            -- Code action groups
+            vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
+        end,
+    },
+})
+

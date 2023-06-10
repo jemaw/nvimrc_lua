@@ -7,15 +7,23 @@ local luasnip = require("luasnip")
 require("luasnip.loaders.from_vscode").load()
 local cmp = require("cmp")
 
-vim.opt.completeopt = "menu,menuone,noselect"
+
 
 cmp.setup({
     sources = cmp.config.sources({
         { name = "buffer" },
         { name = "nvim_lsp" },
+        { name = "nvim_lua" },
+        { name = "nvim_lsp_signature_help"},
         { name = "luasnip" },
         { name = "path" }
     }),
+    preselect = cmp.PreselectMode.None,
+
+    window = {
+        -- completion = cmp.config.window.bordered(),
+        -- documentation = cmp.config.window.bordered(),
+    },
 
     mapping = {
         ["<cr>"] = cmp.mapping.confirm({select = false}),
@@ -38,7 +46,30 @@ cmp.setup({
             else
                 fallback()
             end
-        end, { "i", "s" })
+        end, { "i", "s" }),
+        ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-f>'] = cmp.mapping.scroll_docs(4),
+        ['<Up>'] = cmp.mapping.select_prev_item(select_opts),
+        ['<Down>'] = cmp.mapping.select_next_item(select_opts),
+
+        ['<C-p>'] = cmp.mapping.select_prev_item(select_opts),
+        ['<C-n>'] = cmp.mapping.select_next_item(select_opts),
+
+    },
+    -- https://vonheikemen.github.io/devlog/tools/setup-nvim-lspconfig-plus-nvim-cmp/
+    formatting = {
+        fields = {'menu', 'abbr', 'kind'},
+        format = function(entry, item)
+            local menu_icon = {
+                nvim_lsp = 'λ',
+                luasnip = '⋗',
+                buffer = 'Ω',
+                path = '🖫',
+            }
+
+            item.menu = menu_icon[entry.source.name]
+            return item
+        end,
     },
 
     snippet = {
@@ -57,6 +88,7 @@ cmp.setup.cmdline('/', {
 
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline(':', {
+    mapping = cmp.mapping.preset.cmdline(),
     sources = cmp.config.sources({
         { name = 'path' }
     }, {

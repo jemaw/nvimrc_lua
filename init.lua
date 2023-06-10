@@ -11,6 +11,8 @@ require('plugins/paq')
 require('colors')
 
 --[[
+TODO: debugging
+TODO: diagnostisc and documentation
 TODO plugins: 
     tags (or just use lsp)
     faster large files editing

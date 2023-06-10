@@ -5,6 +5,25 @@
 local opt = vim.opt  -- to set options
 
 ----------------
+-- Completion 
+----------------
+
+vim.opt.completeopt = "menu,menuone,noinsert,noselect"
+
+-- Avoid showing extra messages when using completion
+vim.opt.shortmess = vim.opt.shortmess + "c"
+
+-- Fixed column for diagnostics to appear
+-- Show autodiagnostic popup on cursor hover_range
+-- Goto previous / next diagnostic warning / error 
+-- Show inlay_hints more frequently 
+vim.api.nvim_set_option('updatetime', 300)
+vim.cmd([[
+set signcolumn=yes
+autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
+]])
+
+----------------
 -- Folding 
 ----------------
 

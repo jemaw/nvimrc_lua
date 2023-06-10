@@ -17,7 +17,8 @@ require "paq" {
     'nvim-treesitter/nvim-treesitter';
 
     'nvim-lua/plenary.nvim';
-    {'nvim-telescope/telescope.nvim', branch="nvim-0.5.1"};
+    -- "nvim-lua/popup.nvim";
+    {'nvim-telescope/telescope.nvim' , tag='0.1.1'};
     "b3nj5m1n/kommentary";
     'lewis6991/gitsigns.nvim';
     "mhartington/formatter.nvim";
@@ -29,26 +30,32 @@ require "paq" {
     "mcchrish/zenbones.nvim",
     "rktjmp/lush.nvim";  -- required by zenbones
      "jemaw/vim-noctwo";
+     "rebelot/kanagawa.nvim";
 
 
     -- git
     "tpope/vim-fugitive";
 
     -- autocompletion
-    "neovim/nvim-lspconfig";
     "hrsh7th/cmp-nvim-lsp";
+    "hrsh7th/cmp-nvim-lsp-signature-help";
+    "hrsh7th/cmp-nvim-lua";
     "hrsh7th/cmp-buffer";
     "hrsh7th/cmp-path";
     "hrsh7th/cmp-cmdline";
     "hrsh7th/nvim-cmp";
-    "L3MON4D3/LuaSnip";
-    "saadparwaiz1/cmp_luasnip";
     -- snippets
     "L3MON4D3/LuaSnip";
     "saadparwaiz1/cmp_luasnip";
     "rafamadriz/friendly-snippets";
     -- notes
-    "vimwiki/vimwiki"
+    "vimwiki/vimwiki";
+
+    -- language server
+    "neovim/nvim-lspconfig";
+    "williamboman/mason.nvim";
+    "simrat39/rust-tools.nvim";
+    "williamboman/mason-lspconfig.nvim"
 
 }
 
@@ -61,3 +68,4 @@ require('plugins/treesitter_conf')
 require('plugins/cmp_conf')
 require("plugins/formatter_conf")
 require("plugins/vimwiki_conf")
+require("mason").setup()
