@@ -5,5 +5,5 @@ local cmd = vim.cmd
 
 opt.termguicolors = true
 opt.background = "dark"
-cmd 'colorscheme kanagawabones'
+cmd 'colorscheme kanagawa'
 
