@@ -21,7 +21,6 @@ require "paq" {
     {'nvim-telescope/telescope.nvim' , tag='0.1.1'};
     "b3nj5m1n/kommentary";
     'lewis6991/gitsigns.nvim';
-    "mhartington/formatter.nvim";
 
     -- themes
     'Pocco81/Catppuccino.nvim';
@@ -55,6 +54,7 @@ require "paq" {
     "neovim/nvim-lspconfig";
     "williamboman/mason.nvim";
     "simrat39/rust-tools.nvim";
+    -- "mfussenegger/nvim-dap"; -- somehow doesn't work
     "williamboman/mason-lspconfig.nvim"
 
 }
@@ -66,6 +66,5 @@ require('plugins/telescope_conf')
 -- use TSInstall and TSUpdate
 require('plugins/treesitter_conf')
 require('plugins/cmp_conf')
-require("plugins/formatter_conf")
 require("plugins/vimwiki_conf")
 require("mason").setup()

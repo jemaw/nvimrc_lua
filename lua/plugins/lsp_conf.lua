@@ -10,7 +10,7 @@ vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', op
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
-  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+  -- vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
@@ -21,6 +21,8 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>f', '<cmd> lua vim.lsp.buf.format()<CR>', opts)
+  
 end
 
 
@@ -39,11 +41,14 @@ vim.keymap.set('n', '<Leader>l', ':call v:lua.toggle_diagnostics()<CR>', opts)
 
 local lspconfig = require('lspconfig')
 local rt = require("rust-tools")
-lspconfig.pyright.setup {}
+lspconfig.pyright.setup {
+    on_attach = on_attach
+}
 rt.setup({
     server = {
-        on_attach = function(_, bufnr)
-            -- Hover actions
+        on_attach = function(client, bufnr)
+            -- Hover actions, not sure if needed
+            on_attach(client, bufnr)
             vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
             -- Code action groups
             vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })

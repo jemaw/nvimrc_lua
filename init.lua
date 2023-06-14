@@ -11,6 +11,10 @@ require('plugins/paq')
 require('colors')
 
 --[[
+
+Following
+- https://rsdlt.github.io/posts/rust-nvim-ide-guide-walkthrough-development-debug/
+- https://sharksforarms.dev/posts/neovim-rust/
 TODO: debugging
 TODO: diagnostisc and documentation
 TODO plugins: 
@@ -24,4 +28,5 @@ TODO layout of configs
 
 TODO appearance: more colorschemes
 TODO simplified version without plugins
+
 ]]

@@ -13,6 +13,10 @@ map('n', '<a-left>', ':bp<CR>', noremap)
 -- quickswitch
 map('n', '<bs>', '<c-^>', noremap)
 
+-- move lines in visual mode
+map('v', 'J', ":m '>+1<CR>gv=gv", noremap)
+map('v', 'K', ":m '<-2<CR>gv=gv", noremap)
+
 -- Movement in long lines
 map('n', 'j', 'gj', { silent=true})
 map('n', 'k', 'gk', { silent=true})
@@ -24,6 +28,9 @@ map('n', 'k', 'gk', { silent=true})
 map('i', 'kj', '<c-c>`^', noremap)
 map('i', 'kjs', '<c-c>`^:w<CR>', noremap)
 
+-- clearer movement
+map('n', '<C-d>', '<C-d>zz', noremap)
+map('n', '<C-u>', '<C-u>zz', noremap)
 
 -- Split moving
 map('n', '<C-h>', '<C-w>h', noremap)
