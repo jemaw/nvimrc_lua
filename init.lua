@@ -7,8 +7,11 @@ require('settings')
 require('mappings')
 
 -- plugins and config of plugins
-require('plugins/paq')
+
 require('colors')
+require('plugins/paq')
+require('statusline')
+-- require('plugins/lazy')
 
 --[[
 

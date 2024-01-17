@@ -16,11 +16,19 @@ require "paq" {
     'savq/paq-nvim';
     'nvim-treesitter/nvim-treesitter';
 
-    'nvim-lua/plenary.nvim';
-    -- "nvim-lua/popup.nvim";
-    {'nvim-telescope/telescope.nvim' , tag='0.1.1'};
+    {'nvim-telescope/telescope.nvim' , tag='0.1.5'};
     "b3nj5m1n/kommentary";
     'lewis6991/gitsigns.nvim';
+
+    -- ui
+    'nvim-tree/nvim-tree.lua';
+    -- todo fix issues with noice.nvim
+    'folke/noice.nvim';
+    'MunifTanjim/nui.nvim';
+    'rcarriga/nvim-notify';
+    'nvim-lua/plenary.nvim';
+    -- "nvim-lua/popup.nvim";
+    'nvim-neo-tree/neo-tree.nvim';
 
     -- themes
     'Pocco81/Catppuccino.nvim';
@@ -30,7 +38,7 @@ require "paq" {
     "rktjmp/lush.nvim";  -- required by zenbones
      "jemaw/vim-noctwo";
      "rebelot/kanagawa.nvim";
-
+     "ColinKennedy/hybrid2.nvim";
 
     -- git
     "tpope/vim-fugitive";
@@ -47,18 +55,26 @@ require "paq" {
     "L3MON4D3/LuaSnip";
     "saadparwaiz1/cmp_luasnip";
     "rafamadriz/friendly-snippets";
-    -- notes
-    "vimwiki/vimwiki";
+
+    -- debugger todo
+    --[[ "mfussenegger/nvim-dap";
+    "jay-babu/mason-nvim-dap.nvim";
+    "rcarriga/nvim-dap-ui"; ]]
+
+    -- misc
+    "dstein64/vim-startuptime";
+    "folke/which-key.nvim",
 
     -- language server
     "neovim/nvim-lspconfig";
     "williamboman/mason.nvim";
     "simrat39/rust-tools.nvim";
-    -- "mfussenegger/nvim-dap"; -- somehow doesn't work
     "williamboman/mason-lspconfig.nvim"
 
 }
 
+require("nvim-tree").setup()
+vim.keymap.set('n', '<leader>n', "<cmd>Neotree toggle<cr>")
 -- install with pip or npm
 require('plugins/lsp_conf')
 require('gitsigns').setup()
@@ -66,5 +82,5 @@ require('plugins/telescope_conf')
 -- use TSInstall and TSUpdate
 require('plugins/treesitter_conf')
 require('plugins/cmp_conf')
-require("plugins/vimwiki_conf")
 require("mason").setup()
+require("noice").setup()
