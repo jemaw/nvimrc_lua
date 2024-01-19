@@ -2,13 +2,13 @@
 -- Init Lua --
 --------------
 
-require('settings')
-require('mappings')
+require("settings")
+require("mappings")
 
 -- plugins and config of plugins
-require('plugins/paq')
-require('colors')
-require('statusline')
+require("plugins/paq")
+require("colors")
+require("statusline")
 
 --[[
 

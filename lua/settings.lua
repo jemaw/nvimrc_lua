@@ -2,10 +2,10 @@
 -- General Settings
 -------------------------
 
-local opt = vim.opt  -- to set options
+local opt = vim.opt -- to set options
 
 ----------------
--- Completion 
+-- Completion
 ----------------
 
 vim.opt.completeopt = "menu,menuone,noinsert,noselect"
@@ -15,32 +15,32 @@ vim.opt.shortmess = vim.opt.shortmess + "c"
 
 -- Fixed column for diagnostics to appear
 -- Show autodiagnostic popup on cursor hover_range
--- Goto previous / next diagnostic warning / error 
--- Show inlay_hints more frequently 
-vim.api.nvim_set_option('updatetime', 300)
+-- Goto previous / next diagnostic warning / error
+-- Show inlay_hints more frequently
+vim.api.nvim_set_option("updatetime", 300)
 vim.cmd([[
 set signcolumn=yes
 autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
 ]])
 
 ----------------
--- Folding 
+-- Folding
 ----------------
 
 opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
-opt.foldlevelstart=0
+opt.foldlevelstart = 0
 opt.foldnestmax = 3
 opt.foldlevelstart = 3
 
 ----------------
--- Misc 
+-- Misc
 ----------------
 
 -- tags filename
-opt.tags = "./tags;,tags";
+opt.tags = "./tags;,tags"
 -- use space as a the leader key
-vim.g.mapleader = ' '
+vim.g.mapleader = " "
 -- allows unsaved buffers
 opt.hidden = true
 -- change title of window
@@ -52,7 +52,7 @@ opt.autochdir = true
 -- signcolumn in numbers
 opt.signcolumn = "number"
 -- formatting no automatic insert of comment character
-vim.opt.formatoptions:remove { "c", "r", "o" }
+vim.opt.formatoptions:remove({ "c", "r", "o" })
 
 ----------------
 -- Searching
@@ -85,7 +85,7 @@ opt.showmode = false
 ----------------
 
 opt.wildmenu = true
-opt.wildignorecase=true
+opt.wildignorecase = true
 opt.wildignore = opt.wildignore + "*.swp,.tags,*.bak,*.pyc,*.class,*.jar"
 opt.wildignore = opt.wildignore + "*.gif,*.png,*.jpg,*.ico"
 opt.wildignore = opt.wildignore + "*.pdf,*.psd"
@@ -103,9 +103,9 @@ opt.sidescroll = 1
 ----------------
 -- Indent
 ----------------
-opt.tabstop=4
-opt.softtabstop = 4 
-opt.shiftwidth = 4 
+opt.tabstop = 4
+opt.softtabstop = 4
+opt.shiftwidth = 4
 opt.expandtab = true
 
 -- cindent options
