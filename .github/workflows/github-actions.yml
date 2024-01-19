@@ -10,5 +10,6 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           version: v0.19.1
           args: --check .
+      - run: fail
       - run: stylua --check .
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
