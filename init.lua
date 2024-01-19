@@ -2,7 +2,7 @@
 -- Init Lua --
 --------------
 
-require("settings")
+require('settings')
 require("mappings")
 
 -- plugins and config of plugins

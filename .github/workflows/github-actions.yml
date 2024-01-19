@@ -1,7 +1,7 @@
 name: GitHub Actions Demo
 on: [push]
 jobs:
-  lint:
+  fmt-check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -10,6 +10,3 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           version: v0.19.1
           args: --check .
-      - run: fail
-      - run: stylua --check .
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
