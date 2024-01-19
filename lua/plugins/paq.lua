@@ -22,12 +22,10 @@ require "paq" {
 
     -- ui
     'nvim-tree/nvim-tree.lua';
-    -- todo fix issues with noice.nvim
     'folke/noice.nvim';
     'MunifTanjim/nui.nvim';
     'rcarriga/nvim-notify';
     'nvim-lua/plenary.nvim';
-    -- "nvim-lua/popup.nvim";
     'nvim-neo-tree/neo-tree.nvim';
 
     -- themes
@@ -39,6 +37,7 @@ require "paq" {
      "jemaw/vim-noctwo";
      "rebelot/kanagawa.nvim";
      "ColinKennedy/hybrid2.nvim";
+     "folke/tokyonight.nvim";
 
     -- git
     "tpope/vim-fugitive";
@@ -68,7 +67,9 @@ require "paq" {
     -- language server
     "neovim/nvim-lspconfig";
     "williamboman/mason.nvim";
-    "simrat39/rust-tools.nvim";
+    -- "simrat39/rust-tools.nvim";
+    "/mrcjkb/rustaceanvim";
+    "rust-lang/rust.vim";
     "williamboman/mason-lspconfig.nvim"
 
 }

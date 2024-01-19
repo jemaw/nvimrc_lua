@@ -39,20 +39,25 @@ function _G.toggle_diagnostics()
 end
 vim.keymap.set('n', '<Leader>l', ':call v:lua.toggle_diagnostics()<CR>', opts)
 
+-- setup servers
 local lspconfig = require('lspconfig')
-local rt = require("rust-tools")
-lspconfig.pyright.setup {
-    on_attach = on_attach
-}
-rt.setup({
-    server = {
-        on_attach = function(client, bufnr)
-            -- Hover actions, not sure if needed
-            on_attach(client, bufnr)
-            vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
-            -- Code action groups
-            vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
-        end,
-    },
-})
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
+lspconfig.pyright.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+}
+-- rust
+vim.g.rustfmt_autosave = 1
+vim.g.rustaceanvim = {
+   ---@type RustaceanToolsOpts
+   tools = {
+     -- ...
+   },
+   ---@type RustaceanLspClientOpts
+   server = {
+     on_attach = function(client, bufnr)
+       -- Set keybindings, etc. here.
+     end,
+   },
+ }
