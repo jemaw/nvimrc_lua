@@ -18,14 +18,7 @@ Following:
 - https://sharksforarms.dev/posts/neovim-rust/
 
 TODO: debugging
-TODO: diagnostisc and documentation
-TODO plugins: 
-    tags (or just use lsp)
-    faster large files editing
-    tex
-
-TODO layout of configs
-
-TODO some formatting / linting on the lua stuff
+TODO: lsp setup, diagnostisc and documentation
+TODO: autocomplete nicer
 
 ]]
