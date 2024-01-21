@@ -19,8 +19,8 @@ cmp.setup({
 	preselect = cmp.PreselectMode.None,
 
 	window = {
-		-- completion = cmp.config.window.bordered(),
-		-- documentation = cmp.config.window.bordered(),
+		completion = cmp.config.window.bordered(),
+		documentation = cmp.config.window.bordered(),
 	},
 
 	mapping = {
@@ -55,8 +55,9 @@ cmp.setup({
 	},
 	-- https://vonheikemen.github.io/devlog/tools/setup-nvim-lspconfig-plus-nvim-cmp/
 	formatting = {
-		fields = { "menu", "abbr", "kind" },
+		fields = { "abbr", "kind", "menu" },
 		format = function(entry, item)
+			-- icons for source of the completion
 			local menu_icon = {
 				nvim_lsp = "λ",
 				luasnip = "⋗",

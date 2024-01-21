@@ -52,7 +52,7 @@ opt.autochdir = true
 -- signcolumn in numbers
 opt.signcolumn = "number"
 -- formatting no automatic insert of comment character
-vim.opt.formatoptions:remove({ "c", "r", "o" })
+opt.formatoptions:remove({ "c", "r", "o" })
 
 ----------------
 -- Searching
