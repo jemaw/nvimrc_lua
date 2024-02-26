@@ -68,7 +68,7 @@ require("paq")({
 	"neovim/nvim-lspconfig",
 	"williamboman/mason.nvim",
 	-- "simrat39/rust-tools.nvim";
-	"/mrcjkb/rustaceanvim",
+	"mrcjkb/rustaceanvim",
 	"rust-lang/rust.vim",
 	"williamboman/mason-lspconfig.nvim",
 })
@@ -76,14 +76,18 @@ require("paq")({
 require("nvim-tree").setup()
 vim.keymap.set("n", "<leader>n", "<cmd>Neotree toggle<cr>")
 -- install with pip or npm
-require("plugins/lsp_conf")
 require("gitsigns").setup()
 require("plugins/telescope_conf")
 -- use TSInstall and TSUpdate
 require("plugins/treesitter_conf")
 require("plugins/cmp_conf")
 require("mason").setup()
+require("mason-lspconfig").setup {
+    ensure_installed = { "lua_ls", "pyright" , "nil_ls" },
+}
+ 
 require("noice").setup()
+require("plugins/lsp_conf")
 
 require("kanagawa").setup({
 	overrides = function(colors)

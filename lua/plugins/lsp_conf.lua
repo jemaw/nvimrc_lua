@@ -38,10 +38,21 @@ vim.keymap.set("n", "<Leader>l", ":call v:lua.toggle_diagnostics()<CR>", opts)
 local lspconfig = require("lspconfig")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-lspconfig.pyright.setup({
+lspconfig.nil_ls.setup({
+    on_attach = on_attach,
+    settings = {
+        ['nil'] = {
+            formatting = {
+                command = { "nixpkgs-fmt" },
+            },
+        }
+    },
+})
+
+--[[ lspconfig.pyright.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
-})
+}) ]]
 -- rust
 vim.g.rustfmt_autosave = 1
 vim.g.rustaceanvim = {
