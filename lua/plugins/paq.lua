@@ -82,10 +82,10 @@ require("plugins/telescope_conf")
 require("plugins/treesitter_conf")
 require("plugins/cmp_conf")
 require("mason").setup()
-require("mason-lspconfig").setup {
-    ensure_installed = { "lua_ls", "pyright" , "nil_ls" },
-}
- 
+require("mason-lspconfig").setup({
+	ensure_installed = { "lua_ls", "pyright", "nil_ls" },
+})
+
 require("noice").setup()
 require("plugins/lsp_conf")
 

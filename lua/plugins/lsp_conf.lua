@@ -39,14 +39,14 @@ local lspconfig = require("lspconfig")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 lspconfig.nil_ls.setup({
-    on_attach = on_attach,
-    settings = {
-        ['nil'] = {
-            formatting = {
-                command = { "nixpkgs-fmt" },
-            },
-        }
-    },
+	on_attach = on_attach,
+	settings = {
+		["nil"] = {
+			formatting = {
+				command = { "nixpkgs-fmt" },
+			},
+		},
+	},
 })
 
 --[[ lspconfig.pyright.setup({
