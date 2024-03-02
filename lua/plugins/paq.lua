@@ -22,12 +22,12 @@ require("paq")({
 
 	-- ui
 	"nvim-tree/nvim-tree.lua",
-    "nvim-tree/nvim-web-devicons",
+	"nvim-tree/nvim-web-devicons",
 	"folke/noice.nvim",
 	"MunifTanjim/nui.nvim",
 	"rcarriga/nvim-notify",
 	"nvim-lua/plenary.nvim",
-    "NvChad/nvterm",
+	"NvChad/nvterm",
 
 	-- themes
 	"Pocco81/Catppuccino.nvim",

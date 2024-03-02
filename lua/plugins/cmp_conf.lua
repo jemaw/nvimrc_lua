@@ -8,10 +8,10 @@ require("luasnip.loaders.from_vscode").lazy_load()
 local cmp = require("cmp")
 local lsp_icons = require("plugins/nvchad_icons")
 local source_icons = {
-    nvim_lsp = "λ",
-    luasnip = "⋗",
-    buffer = "Ω",
-    path = "🖫",
+	nvim_lsp = "λ",
+	luasnip = "⋗",
+	buffer = "Ω",
+	path = "🖫",
 }
 
 cmp.setup({

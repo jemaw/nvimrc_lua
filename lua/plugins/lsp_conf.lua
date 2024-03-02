@@ -62,6 +62,6 @@ vim.g.rustaceanvim = {
 	},
 	---@type RustaceanLspClientOpts
 	server = {
-		on_attach = on_attach
+		on_attach = on_attach,
 	},
 }
