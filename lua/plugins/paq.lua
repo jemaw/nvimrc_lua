@@ -22,11 +22,12 @@ require("paq")({
 
 	-- ui
 	"nvim-tree/nvim-tree.lua",
+    "nvim-tree/nvim-web-devicons",
 	"folke/noice.nvim",
 	"MunifTanjim/nui.nvim",
 	"rcarriga/nvim-notify",
 	"nvim-lua/plenary.nvim",
-	"nvim-neo-tree/neo-tree.nvim",
+    "NvChad/nvterm",
 
 	-- themes
 	"Pocco81/Catppuccino.nvim",
@@ -73,9 +74,9 @@ require("paq")({
 	"williamboman/mason-lspconfig.nvim",
 })
 
+require("plugins/nvterm_conf")
 require("nvim-tree").setup()
-vim.keymap.set("n", "<leader>n", "<cmd>Neotree toggle<cr>")
--- install with pip or npm
+vim.keymap.set("n", "<leader>n", "<cmd>NvimTreeToggle<cr>")
 require("gitsigns").setup()
 require("plugins/telescope_conf")
 -- use TSInstall and TSUpdate

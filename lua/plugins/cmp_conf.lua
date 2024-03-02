@@ -6,6 +6,13 @@ end
 local luasnip = require("luasnip")
 require("luasnip.loaders.from_vscode").lazy_load()
 local cmp = require("cmp")
+local lsp_icons = require("plugins/nvchad_icons")
+local source_icons = {
+    nvim_lsp = "λ",
+    luasnip = "⋗",
+    buffer = "Ω",
+    path = "🖫",
+}
 
 cmp.setup({
 	sources = cmp.config.sources({
@@ -57,15 +64,7 @@ cmp.setup({
 	formatting = {
 		fields = { "abbr", "kind", "menu" },
 		format = function(entry, item)
-			-- icons for source of the completion
-			local menu_icon = {
-				nvim_lsp = "λ",
-				luasnip = "⋗",
-				buffer = "Ω",
-				path = "🖫",
-			}
-
-			item.menu = menu_icon[entry.source.name]
+			item.menu = lsp_icons[item.kind]
 			return item
 		end,
 	},

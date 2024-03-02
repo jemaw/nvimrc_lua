@@ -49,10 +49,10 @@ lspconfig.nil_ls.setup({
 	},
 })
 
---[[ lspconfig.pyright.setup({
+lspconfig.pyright.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
-}) ]]
+})
 -- rust
 vim.g.rustfmt_autosave = 1
 vim.g.rustaceanvim = {
@@ -62,8 +62,6 @@ vim.g.rustaceanvim = {
 	},
 	---@type RustaceanLspClientOpts
 	server = {
-		on_attach = function(client, bufnr)
-			-- Set keybindings, etc. here.
-		end,
+		on_attach = on_attach
 	},
 }
