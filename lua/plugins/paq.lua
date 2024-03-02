@@ -15,6 +15,7 @@ end
 require("paq")({
 	"savq/paq-nvim",
 	"nvim-treesitter/nvim-treesitter",
+	"windwp/nvim-autopairs",
 
 	{ "nvim-telescope/telescope.nvim", tag = "0.1.5" },
 	"b3nj5m1n/kommentary",
@@ -74,6 +75,9 @@ require("paq")({
 	"williamboman/mason-lspconfig.nvim",
 })
 
+-- maybe requires:
+-- https://github.com/hrsh7th/nvim-cmp/wiki/Advanced-techniques#add-parentheses-after-selecting-function-or-method-item
+require("nvim-autopairs").setup({})
 require("plugins/nvterm_conf")
 require("nvim-tree").setup()
 vim.keymap.set("n", "<leader>n", "<cmd>NvimTreeToggle<cr>")
