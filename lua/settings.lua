@@ -37,6 +37,8 @@ opt.foldlevelstart = 3
 -- Misc
 ----------------
 
+-- wrapped lines will continue
+opt.breakindent = true
 -- tags filename
 opt.tags = "./tags;,tags"
 -- use space as a the leader key
@@ -46,7 +48,7 @@ opt.hidden = true
 -- change title of window
 opt.title = true
 -- use * clipboard
-opt.clipboard = opt.clipboard + "unnamed"
+opt.clipboard = "unnamedplus"
 -- automatically change working directory
 opt.autochdir = true
 -- signcolumn in numbers

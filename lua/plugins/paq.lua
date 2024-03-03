@@ -17,18 +17,24 @@ require("paq")({
 	"nvim-treesitter/nvim-treesitter",
 	"windwp/nvim-autopairs",
 
+	-- misc
 	{ "nvim-telescope/telescope.nvim", tag = "0.1.5" },
-	"b3nj5m1n/kommentary",
+	"numToStr/Comment.nvim",
+	-- auto detect shiftwidth, expandtab
+	"tpope/vim-sleuth",
 	"lewis6991/gitsigns.nvim",
+	"dstein64/vim-startuptime",
+	"folke/which-key.nvim",
 
 	-- ui
 	"nvim-tree/nvim-tree.lua",
 	"nvim-tree/nvim-web-devicons",
-	"folke/noice.nvim",
 	"MunifTanjim/nui.nvim",
 	"rcarriga/nvim-notify",
 	"nvim-lua/plenary.nvim",
 	"NvChad/nvterm",
+	"folke/noice.nvim",
+	"folke/todo-comments.nvim",
 
 	-- themes
 	"Pocco81/Catppuccino.nvim",
@@ -62,10 +68,6 @@ require("paq")({
     "jay-babu/mason-nvim-dap.nvim";
     "rcarriga/nvim-dap-ui"; ]]
 
-	-- misc
-	"dstein64/vim-startuptime",
-	"folke/which-key.nvim",
-
 	-- language server
 	"neovim/nvim-lspconfig",
 	"williamboman/mason.nvim",
@@ -78,6 +80,7 @@ require("paq")({
 -- maybe requires:
 -- https://github.com/hrsh7th/nvim-cmp/wiki/Advanced-techniques#add-parentheses-after-selecting-function-or-method-item
 require("nvim-autopairs").setup({})
+require("nvim-web-devicons").setup()
 require("plugins/nvterm_conf")
 require("nvim-tree").setup()
 vim.keymap.set("n", "<leader>n", "<cmd>NvimTreeToggle<cr>")
@@ -92,6 +95,9 @@ require("mason-lspconfig").setup({
 })
 
 require("noice").setup()
+require("todo-comments").setup()
+require("which-key").setup()
+require("Comment").setup()
 require("plugins/lsp_conf")
 
 require("kanagawa").setup({
