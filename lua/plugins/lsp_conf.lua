@@ -53,6 +53,12 @@ lspconfig.pyright.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
+lspconfig.zls.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+
+})
+
 -- rust
 vim.g.rustfmt_autosave = 1
 vim.g.rustaceanvim = {
