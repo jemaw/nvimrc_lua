@@ -50,13 +50,12 @@ lspconfig.nil_ls.setup({
 })
 
 -- simple setups
-local lsps = {"pyright", "zls", "bashls"}
-for i = 1, #lsps 
-do
+local lsps = { "pyright", "zls", "bashls" }
+for i = 1, #lsps do
 	lspconfig[lsps[i]].setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-})
+		on_attach = on_attach,
+		capabilities = capabilities,
+	})
 end
 
 -- rust
