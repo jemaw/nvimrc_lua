@@ -49,14 +49,15 @@ lspconfig.nil_ls.setup({
 	},
 })
 
-lspconfig.pyright.setup({
+-- simple setups
+local lsps = {"pyright", "zls", "bashls"}
+for i = 1, #lsps 
+do
+	lspconfig[lsps[i]].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
-lspconfig.zls.setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-})
+end
 
 -- rust
 vim.g.rustfmt_autosave = 1

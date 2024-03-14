@@ -91,7 +91,7 @@ require("plugins/treesitter_conf")
 require("plugins/cmp_conf")
 require("mason").setup()
 require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls", "pyright", "nil_ls", "rust_analyzer", "zls" },
+	ensure_installed = { "bashls", "lua_ls", "pyright", "nil_ls", "rust_analyzer", "zls" },
 })
 
 require("noice").setup()
